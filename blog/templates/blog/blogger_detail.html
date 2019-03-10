@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ blogger.screen_name }}</h1>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Bio:</h4>
+    <p>{{ blogger.bio }}</p>
+    <h4>Blog Posts:</h4>
+    {% for blogpost in blogger.blogpost_set.all %}
+      <li><a href="{{ blogpost.get_absolute_url }}">{{ blogpost }}</a> ({{ blogpost.post_date }})</li>
+    {% endfor %}
+  </div>
+{% endblock %}
