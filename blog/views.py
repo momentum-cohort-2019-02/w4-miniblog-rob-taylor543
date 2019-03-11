@@ -23,7 +23,7 @@ class BloggerDetailView(generic.DetailView):
 
 class BlogPostListView(generic.ListView):
     model = BlogPost
+    paginate_by = 1
 
 class BlogPostDetailView(generic.DetailView):
     model = BlogPost
-    
