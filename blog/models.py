@@ -37,5 +37,5 @@ class Blogger(models.Model):
 class Comment(models.Model):
     blog = models.ForeignKey('BlogPost', on_delete=models.SET_NULL, null = True)
     post_time = models.DateTimeField(auto_now_add=True)
-    # user = models.ForeignKey('User', on_delete=models.DO_NOTHING, null = True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null = True)
     content = models.TextField(max_length=1000)
